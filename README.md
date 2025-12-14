@@ -1,13 +1,14 @@
 # Cyberpunk Budget Tracker
 
-A mobile-first, cyberpunk-themed budget tracker with:
-- Google Auth
-- Expense, income, refund tracking
+Features:
+- Google Auth (Firebase)
+- Expenses, income, refunds
 - Biweekly income schedules (actual vs expected)
-- CSV import with preview + dedupe
-- Cloud sync (Firestore)
+- CSV import with preview & dedupe
+- Mobile-first cyberpunk UI
 
 ## Setup
 1. npm install
-2. Add Firebase env vars to .env.local
-3. npm run dev
+2. Create Firebase project (Auth + Firestore)
+3. Add env vars to .env.local
+4. npm run dev

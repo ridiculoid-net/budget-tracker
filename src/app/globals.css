@@ -2,7 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bg:#070A0F;
+  --panel:rgba(13,18,30,0.72);
+  --border:rgba(122,255,227,0.22);
+  --text:rgba(240,245,255,0.92);
+  --muted:rgba(240,245,255,0.62);
+}
+
 body {
-  background: #070A0F;
-  color: #F0F5FF;
+  background: var(--bg);
+  color: var(--text);
 }
