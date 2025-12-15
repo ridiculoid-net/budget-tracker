@@ -1,12 +1,11 @@
-import AuthGate from "@/components/AuthGate";
+"use client";
 
-export default function Page() {
-  return (
-    <AuthGate>
-      <main style={{ padding: 24 }}>
-        <h1>Home</h1>
-        <p>It builds. It ships. It lives.</p>
-      </main>
-    </AuthGate>
-  );
+import type { ReactNode } from "react";
+
+type AuthGateProps = {
+  children?: ReactNode;
+};
+
+export default function AuthGate({ children }: AuthGateProps) {
+  return <>{children ?? null}</>;
 }
