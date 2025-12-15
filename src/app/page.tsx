@@ -1,10 +1,11 @@
-import AuthGate from "@/src/components/AuthGate";
+import AuthGate from "@/components/AuthGate";
 
 export default function Page() {
   return (
     <AuthGate>
-      <main>
-        Your page content
+      <main style={{ padding: 24 }}>
+        <h1>Home</h1>
+        <p>It builds. It ships. It lives.</p>
       </main>
     </AuthGate>
   );
