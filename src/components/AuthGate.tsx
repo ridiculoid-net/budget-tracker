@@ -1,4 +1,4 @@
-import AuthGate from "@/components/AuthGate";
+import AuthGate from "@/src/components/AuthGate";
 
 export default function Page() {
   return (
