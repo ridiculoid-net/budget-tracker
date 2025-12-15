@@ -557,17 +557,21 @@ export default function Page() {
     }
 
     // basic sanitize + dedupe by id
-    const safe = imported
-      .filter((e) => e && typeof e === "object")
-      .map((e: any) => ({
-        id: String(e.id ?? uid()),
-        ts: Number(e.ts ?? Date.now()),
-        type: e.type === "income" ? "income" : "expense",
-        amountCents: Math.round(Number(e.amountCents ?? 0)),
-        category: String(e.category ?? "Other"),
-        note: String(e.note ?? ""),
-      }))
-      .filter((e) => Number.isFinite(e.ts) && Number.isFinite(e.amountCents) && e.amountCents > 0);
+ const safe: Entry[] = imported
+  .filter((e) => e && typeof e === "object")
+  .map((e: any): Entry => {
+    const t: EntryType = e.type === "income" ? "income" : "expense";
+    return {
+      id: String(e.id ?? uid()),
+      ts: Number(e.ts ?? Date.now()),
+      type: t,
+      amountCents: Math.round(Number(e.amountCents ?? 0)),
+      category: String(e.category ?? "Other"),
+      note: String(e.note ?? ""),
+    };
+  })
+  .filter((e) => Number.isFinite(e.ts) && Number.isFinite(e.amountCents) && e.amountCents > 0);
+
 
     const map = new Map<string, Entry>();
     for (const e of entries) map.set(e.id, e);
